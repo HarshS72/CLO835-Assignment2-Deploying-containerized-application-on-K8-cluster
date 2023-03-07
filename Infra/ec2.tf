@@ -53,3 +53,11 @@ resource "aws_key_pair" "k8s" {
   key_name   = "asn2"
   public_key = file("${path.module}/asn2.pub")
 }
+
+resource "aws_ecr_repository" "websrv_images" {
+  name = "websrv-images"
+}
+
+resource "aws_ecr_repository" "mysql_images" {
+  name = "mysql-images"
+}
