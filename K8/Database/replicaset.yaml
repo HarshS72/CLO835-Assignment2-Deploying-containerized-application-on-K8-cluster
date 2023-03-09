@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: mysql-rs
+  name: mysql
   labels:
-    app: mysql
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/component: database
 spec:
   replicas: 3
   selector:
@@ -22,5 +23,3 @@ spec:
             value: pw
         ports:
           - containerPort: 3306
-      imagePullSecrets:
-        - name: ecrps
