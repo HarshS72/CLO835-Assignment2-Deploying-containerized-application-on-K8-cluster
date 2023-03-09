@@ -3,16 +3,19 @@ kind: Deployment
 metadata:
   name: mysql
   labels:
-    app: mysql
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/component: database
 spec:
   selector:
     matchLabels:
-      app: mysql
+      app.kubernetes.io/name: mysql
+      app.kubernetes.io/component: database
   replicas: 3
   template:
     metadata:
       labels:
-        app: mysql
+        app.kubernetes.io/name: mysql
+        app.kubernetes.io/component: database
     spec:
       containers:
       - name: mysql-images
@@ -22,5 +25,3 @@ spec:
           value: pw
         ports:
         - containerPort: 3306
-      imagePullSecrets:
-          - name: ecrps 

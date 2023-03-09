@@ -3,13 +3,16 @@ kind: Service
 metadata:
   name: application
   labels:
-    app: webapp
+    app: employees
     component: frontend
 spec:
   type: NodePort
-  ports:
+  ports: TCP
     - port: 8080
       targetPort: 8080
       nodePort: 30000
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30001
   selector:
-    app: webapp
+    app: employees
