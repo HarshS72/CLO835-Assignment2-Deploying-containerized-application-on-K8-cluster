@@ -3,8 +3,8 @@ kind: ReplicaSet
 metadata:
   name: mysql
   labels:
-    app.kubernetes.io/name: mysql
-    app.kubernetes.io/component: database
+    app: mysql
+    component: database
 spec:
   replicas: 3
   selector:
