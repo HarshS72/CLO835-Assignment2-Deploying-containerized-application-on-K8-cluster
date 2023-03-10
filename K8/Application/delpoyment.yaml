@@ -21,13 +21,13 @@ spec:
       - name: websrv-images
         image: 844099387134.dkr.ecr.us-east-1.amazonaws.com/websrv-images:v0.1
         env:
-        - name: DBPWD
-          value: pw
-        - name: DBUSER
-          value: root
-        - name: DBHOST
-          value: "mysql.database.svc.cluster.local"
-        - name: DBPORT
-          value: "3306"
+          - name: DBPWD
+            value: pw
+          - name: DBUSER
+            value: root
+          - name: DBHOST
+            value: "mysql.database.svc.cluster.local"
+          - name: DBPORT
+            value: "3306"
         ports:
         - containerPort: 8080
