@@ -6,10 +6,10 @@ metadata:
     app: employees
     component: frontend
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: employees
-  replicas: 3
   template:
     metadata:
       labels:
